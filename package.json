@@ -1,0 +1,25 @@
+{
+  "name": "adjustable_button",
+  "version": "1.0.0",
+  "description": "an adjustable UI button built in React that can be set by columns and rows",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jguardado/AdjustableButton.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Juan Guardado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jguardado/AdjustableButton/issues"
+  },
+  "homepage": "https://github.com/Jguardado/AdjustableButton#readme",
+  "dependencies": {
+    "react": "^15.5.4"
+  }
+}
