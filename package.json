@@ -1,6 +1,6 @@
 {
   "name": "adjustable_button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "an adjustable UI button built in React that can be set by columns and rows",
   "main": "index.js",
   "scripts": {
