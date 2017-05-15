@@ -1,7 +1,7 @@
 const Webpack = require('webpack');
 const path = require('path');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-const buildPath = path.resolve(__dirname, 'public', 'build');
+const buildPath = path.resolve(__dirname, 'lib');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const mainPath = path.resolve(__dirname, 'src', 'index.js');
 
@@ -9,7 +9,8 @@ module.exports = {
     entry: mainPath,
     output: {
         path: buildPath,
-        filename: 'bundle.js',
+        filename: 'index.js',
+        library: "adjustable-react-ui-button"
       },
     module: {
       rules: [

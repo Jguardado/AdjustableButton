@@ -4,7 +4,11 @@
   "description": "an adjustable UI button built in React that can be set by columns and rows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server",
+    "build": "webpack",
+    "demo": "webpack-dev-server --port 3000 --config demo/webpack.config.dev.js",
+    "frontend": "webpack-dev-server --inline"
   },
   "repository": {
     "type": "git",
@@ -24,12 +28,15 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.22.0",
+    "component-playground": "^1.3.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "react": "^15.5.4",
-    "webpack": "^2.5.1"
+    "webpack": "^1.x.x"
   },
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
-    "webpack-dev-server": "2"
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.5.1",
+    "webpack-dev-server": "1"
   }
 }
