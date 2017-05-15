@@ -1,20 +1,20 @@
 'use strict';
 
-var React = require('react/addons');
-var ReactDOM = require('react-dom');
-var Playground = require('component-playground');
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Button from '../src/component/adjustable_button';
 
-var Button = require('./src/component/adjustable_button');
-var componentExample = require("raw!./examples/button.example");
-
-var Index = React.createClass({
+class Index extends Component {
   render() {
     return (
       <div className="component-documentation">
-        <Playground codeText={componentExample} scope={{React: React, Button: Button}}/>
+        <h4>Example of button</h4>
+        <Button columns={3}/>
       </div>
     );
   }
-});
+};
 
-ReactDOM.render(<Index/>, document.getElementById('root'));
+console.log("this is button: ", Button);
+
+ReactDOM.render(<Index/>, document.getElementById('content'));
