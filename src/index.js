@@ -1,4 +1,1 @@
-import AdjustableButton from "./component/adjustable_button"
-console.log('this is adjustable: ', AdjustableButton)
-
-export default AdjustableButton
+export {default as AdjustableButton } from "./component/adjustable_button"

@@ -1,35 +1,50 @@
-const Webpack = require('webpack');
+
+const webpack = require('webpack');
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const path = require('path');
-const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-const buildPath = path.resolve(__dirname, 'lib');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const env  = require('yargs').argv.env; // use --env with webpack 2
 const mainPath = path.resolve(__dirname, 'src', 'index.js');
 
-module.exports = {
-    entry: mainPath,
-    output: {
-        path: buildPath,
-        filename: 'index.js',
-        library: "adjustable-react-ui-button"
+let libraryName = 'AdjustableButton';
+
+let plugins = [], outputFile;
+
+if (env === 'build') {
+  plugins.push(new UglifyJsPlugin({ minimize: true }));
+  outputFile = libraryName + '.min.js';
+} else {
+  outputFile = libraryName + '.js';
+}
+
+const config = {
+  entry: mainPath,
+  devtool: 'source-map',
+  output: {
+    path: __dirname + '/lib',
+    filename: outputFile,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  module: {
+    rules: [
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'babel-loader',
+        exclude: /(node_modules|bower_components)/
       },
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: [nodeModulesPath],
-          use: [{
-            loader: 'babel-loader',
-            options: { presets: ['react', 'es2015', 'stage-2'] },
-          }]
-        },
-        { test: /\.css$/,
-          use: ["style-loader", 'css-loader']
-        },
-      ],
-    },
-    resolve: {
-      modules: [path.resolve(__dirname, './src'), 'node_modules'],
-      extensions: ["", ".js", ".jsx"]
-    },
-    watch: true,
-  };
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    modules: [path.resolve('./src')],
+    extensions: ['.json', '.js', '.jsx']
+  },
+  plugins: plugins
+};
+
+module.exports = config;

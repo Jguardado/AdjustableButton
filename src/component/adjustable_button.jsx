@@ -1,9 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import "./button.css";
 
 class AdjustableButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this._handleOnClick = this._handleOnClick.bind(this);
+  }
+  _handleOnClick() {
+    const { handleClick } = this.props;
+    console.log('button clicked');
+    handleClick()
+  }
   render() {
-    const { columns } = this.props;
+    const { columns, value } = this.props;
     let styles;
 
     if(columns <= 2) {
@@ -36,11 +46,24 @@ class AdjustableButton extends Component {
 
     return (
       <div>
-        <button style={styles} placeholder="your button content" className="button-style">{columns}</button>
+        <button
+          style={styles}
+          onClick={this._handleOnClick}
+          className="button-style">{value}</button>
       </div>
     )
   }
 
+}
+
+AdjustableButton.defaultProps = {
+  value: "yo",
+  onClick: () => {}
+}
+
+AdjustableButton.propTypes = {
+  value: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default AdjustableButton;

@@ -2,19 +2,20 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Button from '../src/component/adjustable_button';
+import Button from '../src/index.js';
 
 class Index extends Component {
   render() {
     return (
       <div className="component-documentation">
-        <h4>Example of button</h4>
-        <Button columns={3}/>
+        <legend>Example of button</legend>
+        <Button
+          handleClick={()=> { console.log('passed down func')}}
+          columns={5}
+          />
       </div>
     );
   }
 };
-
-console.log("this is button: ", Button);
 
 ReactDOM.render(<Index/>, document.getElementById('content'));
