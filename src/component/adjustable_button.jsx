@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from "react";
-import "./button.css";
+import React, { PropTypes } from 'react';
+import './button.css';
 
-class AdjustableButton extends Component {
+class AdjustableButton extends React.Component {
   constructor(props) {
     super(props);
 
@@ -9,39 +9,39 @@ class AdjustableButton extends Component {
   }
   _handleOnClick() {
     const { handleClick } = this.props;
+
     console.log('button clicked');
-    handleClick()
+    handleClick();
   }
   render() {
     const { columns, value } = this.props;
     let styles;
 
-    if(columns <= 2) {
+    if (columns <= 2) {
       styles = {
-        "width": "100%"
-      }
+        'width': '100%'
+      };
     }
 
-    if(columns === 2) {
+    if (columns === 2) {
       styles = {
-        "width": "45%",
-        "margin-right": "3px"
-      }
+        'width': '45%',
+        'margin-right': '3px'
+      };
     }
 
-    if(columns === 3) {
+    if (columns === 3) {
       styles = {
-        "width": "32%",
-        "margin-right": "3px"
-      }
+        'width': '32%',
+        'margin-right': '3px'
+      };
     }
 
-    if(columns === 4) {
+    if (columns === 4) {
       styles = {
-        "width": "23%",
-        "margin-right": "3px"
-      }
-
+        'width': '23%',
+        'margin-right': '3px'
+      };
     }
 
     return (
@@ -49,21 +49,21 @@ class AdjustableButton extends Component {
         <button
           style={styles}
           onClick={this._handleOnClick}
-          className="button-style">{value}</button>
+          className="button-style">{value}
+        </button>
       </div>
-    )
+    );
   }
-
 }
 
 AdjustableButton.defaultProps = {
-  value: "yo",
+  value: 'yo',
   onClick: () => {}
-}
+};
 
 AdjustableButton.propTypes = {
   value: PropTypes.string,
   onClick: PropTypes.func
-}
+};
 
 export default AdjustableButton;

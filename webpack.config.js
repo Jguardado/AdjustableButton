@@ -37,11 +37,17 @@ const config = {
         test: /(\.jsx|\.js)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [ 'css-loader' ]
       }
     ]
   },
   resolve: {
-    modules: [path.resolve('./src')],
+    modules: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve('./src')],
     extensions: ['.json', '.js', '.jsx']
   },
   plugins: plugins

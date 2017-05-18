@@ -1,1 +1,1 @@
-export {default as AdjustableButton } from "./component/adjustable_button"
+export {default as AdjustableButton } from './component/adjustable_button';
