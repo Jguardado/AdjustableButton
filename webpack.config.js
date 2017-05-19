@@ -26,6 +26,9 @@ const config = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
+  externals: {
+    'react': 'react'
+  },
   module: {
     rules: [
       {

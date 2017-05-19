@@ -7,7 +7,9 @@
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev --display-error-details",
     "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
+    "demo": "webpack-dev-server --config webpack.demo.config.js",
+    "build-demo": "webpack --config webpack.demo.config.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,10 @@
     "eslint-loader": "1.7.1",
     "mocha": "3.3.0",
     "react": "^15.x.x",
+    "react-dom": "^15.x.x",
+    "style-loader": "^0.17.0",
     "webpack": "2.4.1",
+    "webpack-dev-server": "^2.4.5",
     "yargs": "7.1.0"
   }
 }
