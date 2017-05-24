@@ -22,7 +22,7 @@ npm run demo
     />
 ```
 
-The above example shows the component being used to render a button capable of being set inline as four columns. However the component does not automatically assume that the user wants any button to b inline. That is why we have included the option of adding personalized styling classes to the component. To do so:
+The above example shows the component being used to render a button capable of being set inline as four columns. However the component does not automatically assume that the user wants any button to be inline. That is why we have included the option of adding personalized styling classes to the component, so that the user and make that definition for themselves. To do so:
 
 ```sh
   <AdjustableButton
@@ -33,4 +33,6 @@ The above example shows the component being used to render a button capable of b
     />
 ```
 
-As you may notice the `handleClick` function above takes in a give function to be used as the `onClick` for the AdjustableButton. In the example we use a simple console.log call back. You can pass whatever function you'd like.    
+As you may notice the `handleClick` function above takes in a give function to be used as the `onClick` for the AdjustableButton. In the example we use a simple console.log call back. You can pass whatever function you'd like.
+
+Another option in AdjustableButton is to set the value or text of the Button. simply pass in whatever string you want to be set as the button text and it will automatically adjust to the appropriate size.   
