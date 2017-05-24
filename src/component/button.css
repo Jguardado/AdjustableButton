@@ -1,8 +1,29 @@
 .button-style {
   border: 1px solid black;
   border-radius: 4px;
-  width: 75px;
-  hieght: 75px;
   padding: 5px;
   margin: 5px;
+}
+
+.single-column {
+  width: 100%
+}
+
+.two-columns {
+  width: 45%;
+  margin-right: 3px
+}
+
+.three-columns {
+  width: 32%;
+  margin-right: 3px
+}
+
+.four-columns {
+  width: 23%;
+  margin-right: 3px
+}
+
+.addedClass {
+  color: blue
 }

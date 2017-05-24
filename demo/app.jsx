@@ -9,7 +9,8 @@ class Index extends React.Component {
         <legend>Example of button</legend>
         <Button
           handleClick={() => { console.log('passed check func');}}
-          columns={5}
+          columns={4}
+          value="example button"
           />
       </div>
     );

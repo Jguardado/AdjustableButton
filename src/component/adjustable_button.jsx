@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classNames from "classnames"
 import './button.css';
 
 class AdjustableButton extends React.Component {
@@ -10,46 +11,26 @@ class AdjustableButton extends React.Component {
   _handleOnClick() {
     const { handleClick } = this.props;
 
-    console.log('button clicked');
     handleClick();
   }
   render() {
-    const { columns, value } = this.props;
-    let styles;
+    const { columns, value, addedClassName } = this.props;
+    const numOfColumms = {
+      1: "single-column",
+      2: "two-columns",
+      3: "three-columns",
+      4: "four-columns"
+    };
 
-    if (columns <= 2) {
-      styles = {
-        'width': '100%'
-      };
-    }
-
-    if (columns === 2) {
-      styles = {
-        'width': '45%',
-        'margin-right': '3px'
-      };
-    }
-
-    if (columns === 3) {
-      styles = {
-        'width': '32%',
-        'margin-right': '3px'
-      };
-    }
-
-    if (columns === 4) {
-      styles = {
-        'width': '23%',
-        'margin-right': '3px'
-      };
-    }
+    const styles = classNames("button-style", numOfColumms[columns], addedClassName)
 
     return (
       <div>
         <button
-          style={styles}
+          className={styles}
           onClick={this._handleOnClick}
-          className="button-style">{value}
+          >
+          {value}
         </button>
       </div>
     );
