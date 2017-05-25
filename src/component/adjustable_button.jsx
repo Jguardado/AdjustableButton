@@ -21,7 +21,7 @@ class AdjustableButton extends React.Component {
       3: 'three-columns',
       4: 'four-columns'
     };
-    const styles = classNames('button-style', numOfColumms[columns], addedClassName);
+    const styles = classNames('ab-button-style', numOfColumms[columns], addedClassName);
 
     return (
       <div>
