@@ -26,7 +26,7 @@ class AdjustableButton extends React.Component {
     return (
       <div>
         <button
-          className={styles}
+          styles={styles}
           onClick={this._handleOnClick}
           >
           {value}
