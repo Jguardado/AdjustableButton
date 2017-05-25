@@ -27,7 +27,8 @@ const config = {
     umdNamedDefine: true
   },
   externals: {
-    'react': 'react'
+    'react': 'react',
+    'classnames': 'classnames'
   },
   module: {
     rules: [
